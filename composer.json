@@ -1,0 +1,16 @@
+{
+    "name": "matthieumota/radiorasp-php",
+    "description": "PHP Wrapper for radiorasp tool.",
+    "authors": [
+        {
+            "name": "Matthieu Mota",
+            "email": "matthieumota@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MatthieuMota\\RadioRasp\\": "src/MatthieuMota/RadioRasp"
+        }
+    }
+}
