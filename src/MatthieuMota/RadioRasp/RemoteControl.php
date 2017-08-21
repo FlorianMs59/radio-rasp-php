@@ -21,8 +21,10 @@ class RemoteControl
 
     public function setIdentifier($identifier)
     {
-        if ($identifier < 0 || $identifier > 14) {
-            throw new \Exception('Le numéro de la télécommande doit être situé entre 0 et 14.');
+        $binary = decbin($identifier);
+        if (strlen($binary) > 26) {
+
+            throw new \Exception('Le numéro de la télécommande doit être situé entre 0 et 67 108 863.');
         }
 
         $this->identifier = $identifier;
@@ -40,9 +42,8 @@ class RemoteControl
 
     public function addButton($name, $value)
     {
-        $binary = decbin($value);
-        if (strlen($binary) > 26) {
-            throw new \Exception('La valeur du bouton doit être située entre 0 et 67 108 863.');
+        if ($value < 0 || $value > 14) {
+            throw new \Exception('La valeur du bouton doit être située entre 0 et 14.');
         }
         $this->buttons[$name] = $value;
 

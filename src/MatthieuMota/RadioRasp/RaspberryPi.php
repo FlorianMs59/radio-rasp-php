@@ -24,14 +24,14 @@ class RaspberryPi implements Platform
         $this->pin = $pin;
     }
 
-    public function send($remote, $value, $state)
+    public function send($remote, $button, $state)
     {
         if (!$this->checkBinIsInstalled()) {
             throw new \Exception($this->getBin() . ' n\'a pas l\'air installé.');
         }
 
         $state = ($state) ? 'on' : 'off';
-        echo $this->getBin() . ' ' . $this->getPin() . ' ' . $value . ' ' . $remote . ' ' . $state . PHP_EOL;
+        echo $this->getBin() . ' ' . $this->getPin() . ' ' . $remote . ' ' . $button . ' ' . $state . PHP_EOL;
     }
 
     private function checkBinIsInstalled()
