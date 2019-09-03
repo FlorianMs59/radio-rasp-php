@@ -14,11 +14,10 @@ require 'vendor/autoload.php';
 use MatthieuMota\RadioRasp\RaspberryPi;
 use MatthieuMota\RadioRasp\RemoteControl;
 
-$rasp = new RaspberryPi();
-$rasp->setRadioPin(10);
-$remote1 = new RemoteControl(1); // This remote use a default platform based on Raspberry Pi 1
-$remote1->addButton('A', 67108863);
-$remote2 = new RemoteControl(2, $rasp); // You can use a specific Platform define before
+$raspberrypi1 = new RaspberryPi();
+$remote1 = new RemoteControl(67108863); // This remote use a default platform based on Raspberry Pi 1
+$remote1->addButton('A', 0);
+$remote2 = new RemoteControl(67108862, $raspberrypi1); // You can use a specific Platform define before
 
 $remote1->press('A', false);
 $remote1->press('A');
