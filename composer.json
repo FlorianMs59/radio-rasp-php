@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "MatthieuMota\\RadioRasp\\": "src/MatthieuMota/RadioRasp"
+            "MatthieuMota\\RadioRasp\\": "src"
         }
     }
 }
